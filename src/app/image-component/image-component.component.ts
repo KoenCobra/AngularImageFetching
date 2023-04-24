@@ -13,8 +13,8 @@ export class ImageComponentComponent {
   }
 
   fetchImage() {
-    this.imgService.fetchImage().subscribe((data) => {
-      this.imgLink = data;
+    this.imgService.fetchImage().subscribe((response) => {
+      this.imgLink = response;
     });
   }
 }

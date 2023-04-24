@@ -1,4 +1,4 @@
 <div class="img-container">
   <button (click)="fetchImage()">Fetch image</button>
-  <img src="{{imgLink}}" alt="">
+  <img *ngIf="imgLink" [src]="imgLink" alt="">
 </div>
