@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {FetchImageService} from "../fetch-image.service";
 
 @Component({
   selector: 'app-image-component',
@@ -6,5 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./image-component.component.scss']
 })
 export class ImageComponentComponent {
+  imgLink: string = '';
 
+  constructor(private imgService: FetchImageService) {
+  }
+
+  fetchImage() {
+    this.imgService.fetchImage().subscribe((data) => {
+      this.imgLink = data;
+    });
+  }
 }
